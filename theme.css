@@ -1,0 +1,69 @@
+/* BTTR palette: sampled visually from the supplied reference, not exact brand codes. */
+:root{
+  --butter:#f1e7d4;
+  --ivory:#f8f6ef;
+  --beige:#cbb69b;
+  --caramel:#bb936f;
+  --brown:#80563f;
+  --espresso:#493127;
+  --black:#171715;
+  --paper:var(--ivory);
+  --cream:var(--butter);
+  --ink:var(--espresso);
+  --muted:#706050;
+  --line:#dfd4c4;
+  --accent:var(--brown);
+}
+::selection{background:var(--beige);color:var(--espresso)}
+/* Ivory + espresso: the quiet foundation, around 70% of the treatment. */
+body,.site-header{background:var(--ivory)}
+.announcement{background:var(--butter);color:var(--espresso)}
+.wordmark,.footer-logo{color:var(--espresso)}
+.hero-copy h1 em,.page-intro h1 em,.page-intro h2 em,.about-layout h2 em,.store-preview h2 em{color:var(--brown)}
+.hero-footnote,.hero-index,.eyebrow{color:var(--brown)}
+.site-header nav,.site-header nav.open{background:var(--butter);border-color:#dfcfb8}
+.site-header .nav-highlight{background:var(--ivory);box-shadow:0 1px 3px #49312708}
+.header-search{background:var(--butter);border-color:#dfcfb8}
+.header-search:focus-within{background:#f5eddf;border-color:var(--caramel);box-shadow:0 0 0 3px #bb936f24}
+/* Espresso + butter: actions, with a warm caramel hover. */
+.button{position:relative;isolation:isolate;overflow:hidden;background:var(--espresso);border-color:var(--espresso);color:var(--ivory);transition:background .35s var(--ease),border-color .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease),transform .35s var(--ease)}
+.button:hover{background:var(--brown);border-color:var(--brown);color:var(--ivory);box-shadow:0 7px 20px #49312715;transform:translateY(-2px)}
+.button:active{transform:translateY(0);box-shadow:none}
+.button::before{content:'';position:absolute;inset:-30% 0;background:var(--butter);opacity:.13;transform:translateX(-110%) skewX(-18deg);z-index:-1;pointer-events:none;transition:transform .65s var(--ease)}
+.button:hover::before{transform:translateX(110%) skewX(-18deg)}
+.button:focus-visible{box-shadow:0 0 0 3px var(--ivory),0 0 0 5px var(--brown)}
+/* Butter + brown: a pause in the story, without adding visual clutter. */
+#about .brand-note{background:var(--butter);border-block:1px solid #dfcfb880;padding-top:75px}
+.brand-note h2 em{color:var(--brown)}
+.about-layout>div>.eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--caramel);vertical-align:middle;margin-right:12px}
+/* Caramel + espresso: the invitation to enter the full collection. */
+.see-more-card{position:relative;isolation:isolate;overflow:hidden;background:var(--caramel);border-color:var(--caramel);color:var(--espresso);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.see-more-card::before{content:'';position:absolute;bottom:-15%;right:-35%;width:110%;aspect-ratio:1;background:var(--butter);border-radius:48% 52% 60% 40%;transform:scale(0);transform-origin:bottom right;z-index:-1;transition:transform .75s var(--ease)}
+.see-more-card:hover,.see-more-card:focus-visible{background:var(--caramel);box-shadow:0 12px 28px #49312712;transform:translateY(-4px)}
+.see-more-card:hover::before,.see-more-card:focus-visible::before{transform:scale(2.3)}
+.see-more-card .eyebrow{color:var(--espresso)}
+.see-more-arrow{background:var(--butter);color:var(--espresso)}
+.see-more-card:hover .see-more-arrow{background:var(--espresso);color:var(--ivory)}
+.product-card .image-wrap{background:var(--butter);transition:box-shadow .4s var(--ease)}
+.product-open:hover .image-wrap,.product-open:focus-visible .image-wrap{box-shadow:0 7px 24px #80563f16}
+.product-label h3{transition:color .3s}
+.product-open:hover h3{color:var(--brown)}
+.product-label>span{color:var(--brown);transition:transform .35s var(--ease)}
+.product-open:hover .product-label>span{transform:translate(3px,-3px)}
+.store-page .category-tabs button.active{background:var(--espresso);color:var(--ivory)}
+.store-page .category-tabs button:not(.active):hover{background:var(--butter);border-color:var(--caramel)}
+.store-toolbar select,.store-search input{background:var(--butter)}
+/* Espresso + ivory closes the page with one deliberate dark accent. */
+.site-footer{background:var(--espresso);color:var(--ivory);border-color:var(--espresso)}
+.site-footer .footer-logo,.site-footer .footer-top p{color:var(--ivory)}
+.footer-top>div a,.footer-top>div button{color:var(--butter);transition:color .25s,transform .25s}
+.footer-top>div a:hover,.footer-top>div button:hover{color:var(--ivory);transform:translateX(3px)}
+.footer-bottom{border-color:#cbb69b45;color:#e1d3bf}
+.site-footer a:focus-visible,.site-footer button:focus-visible{outline-color:var(--butter)}
+.info-dialog,.product-dialog{background:var(--ivory);border-color:var(--beige)}
+.dialog-top .icon-button,.product-close{background:var(--butter);color:var(--espresso)}
+.dialog-top .icon-button:hover,.product-close:hover{background:var(--beige)}
+@media(max-width:700px){#about .brand-note{padding-top:55px}.site-header nav a[aria-current]{background:transparent}}
+@media(prefers-reduced-motion:reduce){.button:hover,.see-more-card:hover,.see-more-card:focus-visible,.product-open:hover .product-label>span,.footer-top>div a:hover,.footer-top>div button:hover{transform:none}.button::before,.see-more-card::before{display:none}}
+/* Small labels need the palette's deepest ink on caramel; large type stays espresso. */
+.see-more-card .eyebrow,.see-more-action{color:var(--black)}
